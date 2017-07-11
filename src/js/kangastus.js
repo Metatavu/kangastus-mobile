@@ -11,9 +11,8 @@
     
     _create : function() {
       $(document.body).on("databaseInitialized", $.proxy(this._onDatabaseInitialized, this));
-      $(document.body).on("touchend", '.index .kangastus-item', $.proxy(this._onIndexKangastusItemTouchEnd, this));
-      $(document.body).on("touchend", '.home-btn-container', $.proxy(this._onHomeBtnTouchEnd, this));
-      $(document.body).on("touchstart", $.proxy(this._onUserInteraction, this));
+      $(document.body).on("click", '.index .kangastus-item', $.proxy(this._onIndexKangastusItemTouchEnd, this));
+      $(document.body).on("click", '.home-btn-container', $.proxy(this._onHomeBtnTouchEnd, this));
       $(document.body).on("touchend",  '.swiper-button-next,.swiper-button-prev', function() { $(this).trigger('click'); });
       //$(document.body).on("touchstart", '.index .kangastus-item', $.proxy(this._onIndexKangastusItemTouchStart, this));
       
@@ -27,7 +26,6 @@
       this.contentVisible = false;
       this.rendering = false;
       this.swiper = null;
-      this.returnToHomeScreenTimer = null;
       this._resetSwiper((swiper) => {
         this._onIndexSlideVisible(swiper);
       });
@@ -42,7 +40,6 @@
       $('.swiper-button-prev').hide();
       $('.header-container').hide();
       this.contentVisible = false;
-      this._unsetReturnToHomeScreenTimer();
     },
     
     _onContentSlideVisible: function() {
@@ -52,30 +49,9 @@
       $('.swiper-button-next').show();
       $('.swiper-button-prev').show();
       this.contentVisible = true;
-      this._setReturnToHomeScreenTimer();
       this.rendering = false;
       this._clearMaxRenderingTimer();
       this.swiper.unlockSwipes();
-    },
-
-    _onUserInteraction: function() {
-      if (this.contentVisible) {
-        this._setReturnToHomeScreenTimer();
-      }
-    },
-
-    _unsetReturnToHomeScreenTimer: function() {
-      if (this.returnToHomeScreenTimer) {
-        clearTimeout(this.returnToHomeScreenTimer);
-        this.returnToHomeScreenTimer = null;
-      }
-    },
-
-    _setReturnToHomeScreenTimer: function() {
-      this._unsetReturnToHomeScreenTimer();
-      this.returnToHomeScreenTimer = setTimeout(() => {
-        this.swiper.slideTo(1, 400, true);
-      }, 1000 * 60 * 5);
     },
 
     _resetSwiper: function(callback) {
@@ -189,6 +165,7 @@
           }
           
           this.swiper.update();
+          $('body').removeClass('loading');
         })
         .catch((err) => {
           console.log(err);

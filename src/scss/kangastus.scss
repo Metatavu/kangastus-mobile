@@ -103,12 +103,20 @@ html, body {
 }
 body {
   background: #eee;
+  background-position: center center;
+  background-repeat: no-repeat;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color:#000;
   margin: 0;
   padding: 0;
   @include font-reqular(20px);
+  
+  &.loading {
+    background: #eee url('../gfx/load.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }
 
 .swiper-container {
@@ -125,8 +133,7 @@ body {
   color: #365598;
   height: 20px;
   position: absolute;
-  top: 260px;
-  letter-spacing: -3px;
+  bottom: 14px;
   @include font-light(20px);
 }
 .swiper-button-prev {
@@ -204,6 +211,8 @@ body {
   
   .page {
     padding-top: 60px;
+    height: calc(100% - 60px);
+    overflow: auto;
     
     .siluhetti {
       position: absolute;
@@ -211,7 +220,7 @@ body {
       width: 100%;
       height: 30px;
       margin-top: 10px;
-      background: url('../gfx/silhuetti.jpg');
+      background: #fff;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 50% bottom;
@@ -227,18 +236,22 @@ body {
     .page-content-container {
       padding-top: 10px;
       padding-bottom: 20px;
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 25px;
+      padding-right: 25px;
       
       .page-title {
         color: #205092;
-        margin-top: 20px;
-        margin-bottom: 15px;
+        margin-top: 5px;
+        margin-bottom: 10px;
         font-size: 22px;
       }
       
       .page-content {
-        @include font-light(14px);
+        @include font-light(16px);
+        @media (max-height: 639px) {
+          @include font-light(14px);
+        }
+        
         color: #000205;
       }
     }
@@ -274,8 +287,11 @@ body {
 
   h3 {
     color: #fff;
-    padding-top: 15px;
-    @include font-reqular(24px);
+    padding-top: 5px;
+    @include font-reqular(20px);
+    color: #fff;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 }
 
