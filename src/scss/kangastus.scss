@@ -1,0 +1,292 @@
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon.eot?eyc1w');
+  src:  url('../fonts/icomoon/icomoon.eot?eyc1w#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?eyc1w') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?eyc1w') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?eyc1w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left-round:before {
+  content: "\e900";
+}
+.icon-arrow-right-round:before {
+  content: "\e901";
+}
+.icon-arrow-left:before {
+  content: "\e902";
+}
+.icon-arrow-right:before {
+  content: "\e903";
+}
+
+@font-face {
+  font-family: 'cairo-extralight';
+  src:  url('../fonts/cairo/Cairo-ExtraLight.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-ExtraLight.woff') format('woff');
+}
+@font-face {
+  font-family: 'cairo-light';
+  src:  url('../fonts/cairo/Cairo-Light.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'cairo-regular';
+  src:  url('../fonts/cairo/Cairo-Regular.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'cairo-semibold';
+  src:  url('../fonts/cairo/Cairo-SemiBold.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'cairo-bold';
+  src:  url('../fonts/cairo/Cairo-Bold.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'cairo-black';
+  src:  url('../fonts/cairo/Cairo-Black.woff2') format('woff2'),
+        url('../fonts/cairo/Cairo-Black.woff') format('woff');
+}
+
+@mixin font-extralight($size) {
+  font-family: 'cairo-extralight', sans-serif;
+  font-size: $size;
+  font-weight: 200;
+}
+@mixin font-light($size) {
+  font-family: 'cairo-light', sans-serif;
+  font-size: $size;
+  font-weight: 300;
+}
+@mixin font-reqular($size) {
+  font-family: 'cairo-semibold', sans-serif;
+  font-size: $size;
+  font-weight: 400;
+}
+@mixin font-semibold($size) {
+  font-family: 'cairo-semibold', sans-serif;
+  font-size: $size;
+  font-weight: 600;
+}
+@mixin font-bold($size) {
+  font-family: 'cairo-bold', sans-serif;
+  font-size: $size;
+  font-weight: 700;
+}
+@mixin font-black($size) {
+  font-family: 'cairo-black', sans-serif;
+  font-size: $size;
+  font-weight: 900;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+  @include font-reqular(20px);
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 22px;
+  background: #fff;
+  min-height: 100%;
+}
+.swiper-pagination {
+  color: #365598;
+  position: absolute;
+  top: 260px;
+  letter-spacing: -3px;
+  @include font-light(26px);
+}
+.swiper-button-prev {
+  position: absolute;
+  padding: 0;
+  top: 244px;
+  background-image: url('../gfx/arrow-left.png');
+  background-position: left center;
+  background-size: cover;
+  
+  left: 0;
+  width: 34px;
+  height: 80px;
+}
+.swiper-button-next {
+  position: absolute;
+  padding: 0;
+  top: 244px;
+  background-image: url('../gfx/arrow-right.png');
+  background-position: right center;
+  background-size: cover;
+
+  right: 0;
+  width: 34px;
+  height: 80px;
+}
+
+.index {
+  background-color: #eef0d8;
+  
+  .kangastus-item {
+    text-align: center;
+    background-size: cover;
+    height: 33.3333333333%;
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-bottom: 10px;
+    
+    
+    h1,
+    div {
+      color: #fff;
+    }
+    
+    .index-title {
+      font-size: 24px;
+      z-index: 5;
+    }
+    
+    .index-content {
+      font-size: 16px;
+      z-index: 5;
+    }
+    
+    .index-icon {
+      font-size: 35px;
+      z-index: 5;
+    }
+  }
+}
+
+.page-container {
+  height: 100%;
+  
+  .page {
+    padding-top: 60px;
+    
+    .siluhetti {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      margin-top: 10px;
+      background: url('../gfx/silhuetti.jpg');
+      background-repeat: no-repeat;
+      background-position: 50% bottom;
+    }
+    
+    .page-featured-image {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    .page-content-container {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+      
+      .page-title {
+        color: #205092;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      
+      .page-content {
+        @include font-light(16px);
+        color: #000205;
+      }
+    }
+  }
+}
+
+.header-container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #eeecdd;
+  z-index: 1;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.4);
+  
+  .home-btn-container {
+    position: absolute;
+    width: 45px;
+    z-index: 40;
+    height: 100px;
+    background-color: #fff !important;
+    border-radius: 0px 0px 70px 70px;
+    left: 10px;
+    
+    .home-btn {
+      width: 50px;
+      height: 45px;
+    }
+  }
+
+  h3 {
+    color: #fff;
+    padding-top: 15px;
+    @include font-reqular(24px);
+  }
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+

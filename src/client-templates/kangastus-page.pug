@@ -1,0 +1,9 @@
+.swiper-slide.page-container
+  .page
+    .page-featured-image(style="background-image: url(" + item.localImageUrl + ")")
+    .page-content-container
+      h1.page-title
+        =item.title.rendered
+      .page-content
+        !=item.content.rendered
+    .siluhetti
