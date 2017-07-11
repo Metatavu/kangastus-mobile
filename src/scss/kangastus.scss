@@ -232,13 +232,13 @@ body {
       
       .page-title {
         color: #205092;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 22px;
       }
       
       .page-content {
-        @include font-light(16px);
+        @include font-light(14px);
         color: #000205;
       }
     }
